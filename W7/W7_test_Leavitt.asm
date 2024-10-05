@@ -5,14 +5,15 @@ _start:
                                 ;Observe these steps in gdb to confirm.
                                 ;Use test to check even/odd status of eax reg.
         mov eax, 11             ;We will check the value 11, which is odd.
-        test eax, 0             ;Compare the last bit of eax with 0, if that bit
-                                ;is also 0, the zero flag (ZF) will be set. If
-                                ;the last bit of eax is zero, it is an even number.
+        test eax, 1             ;Compare the last bit of eax with 1, if that bit
+                                ;is 0, the zero flag (ZF) will be set to 1. If
+                                ;the last bit of eax is 0, it is an even number.
+                                ;If the last bit of eax is 1, ZF is set to 0,
+                                ;indicating that it is false that the last eax bit
+                                ;is 0, which means eax hold an odd number.
                                 ;Via StackOverflow, I see we can use flags with
-                                ;conditional logic, once we cover that material
-                                ;we could interrogate the flag status and use a
-                                ;jump to print out whether or not the number is
-                                ;even or odd.
+                                ;conditional logic. Based on that and lecture notes
+                                ;I implemented this in W7extra_jump_Leavitt.asm
 
         mov eax, 1
         int 0x80
