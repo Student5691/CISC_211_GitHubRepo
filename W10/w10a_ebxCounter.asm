@@ -6,7 +6,7 @@
 ; "compare-to-zero" against ecx, not ebx, so the first comparison will be
 ; against whatever ecx starts as, minus 1. In my case, ecx was initially 0,
 ; therefore the comparison that loop performs is:
-; "what is ecx? It is -1, so not zero, so I should decrement ecx and loop"
+; "what is ecx? It is -1, not zero, so I should decrement ecx and loop"
 ; Then ecx becomes -2 and compares again. It would have to go through 2^32
 ; iterations before the unsigned int gets back to 0. In the Jupyter environment,
 ; this takes about 6 seconds, depending on the virtual machine's allocated
@@ -16,10 +16,10 @@ section .text
         global _start
 
 _start:
-        mov ebx, 10             ;initializing  ebx t o10
+        mov ebx, 10             ;initializing  ebx to 10
 
 top:
-        loop top                ;loop to top label if ebx is not zero? (Not true)
+        loop top                ;decrement ecx and loop to "top" label
         
         mov eax, 1              ;exit sequence
         int 0x80
