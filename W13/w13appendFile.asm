@@ -50,9 +50,9 @@ _start:
 
 section .data
         filename db 'quotes.txt', 0h
-        string1 db 'Better three hours too soon than a minute too late.', 0
+        string1 db 'Better three hours too soon than a minute too late.', 0h
         string1_len equ $ - string1
-        string2 db 'No legacy is so rich as honesty.', 0
+        string2 db 'No legacy is so rich as honesty.', 0h
         string2_len equ $ - string2
         newline db 0xA
 

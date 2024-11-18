@@ -51,9 +51,9 @@ _start:
 
 section .data
         filename db 'quotes.txt', 0h
-        string1 db 'To be, or not to be, that is the question.', 0
+        string1 db 'To be, or not to be, that is the question.', 0h
         string1_len equ $ - string1
-        string2 db 'A fool thinks himself to be wise, but a wise man knows himself to be a fool.', 0
+        string2 db 'A fool thinks himself to be wise, but a wise man knows himself to be a fool.', 0h
         string2_len equ $ - string2
         newline db 0xA
 
