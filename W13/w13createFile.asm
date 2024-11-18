@@ -41,6 +41,10 @@ _start:
         mov edx, 1
         int 0x80
 
+                                ; close file
+        mov eax, 6
+        int 0x80
+
         mov eax,1
         xor ebx, ebx
         int 0x80
